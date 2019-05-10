@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="400.0" prefWidth="600.0"
+            xmlns="http://javafx.com/javafx/8.0.172-ea" fx:controller="Admin.AdminController">
+    <TabPane prefHeight="768.0" prefWidth="1196.0" tabClosingPolicy="UNAVAILABLE">
+        <Tab text="Lekarze">
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                <VBox prefHeight="740.0" prefWidth="262.0">
+                    <Label alignment="BASELINE_CENTER" contentDisplay="CENTER" prefHeight="32.0"
+                           prefWidth="264.0" text="Dodaj lekarza">
+                        <font>
+                            <Font name="Calibri" size="22.0"/>
+                        </font>
+                    </Label>
+                    <TextField fx:id="imieLekarzaTextField" promptText="Imie">
+                        <VBox.margin>
+                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                        </VBox.margin>
+                    </TextField>
+                    <TextField fx:id="nazwiskoLekarzaTextField" layoutX="10.0" layoutY="42.0"
+                               promptText="Nazwisko">
+                        <VBox.margin>
+                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                        </VBox.margin>
+                    </TextField>
+                    <TextField fx:id="specjalizacjaLekarzaTextField" layoutX="10.0" layoutY="42.0"
+                               promptText="Specjalizacja">
+                        <VBox.margin>
+                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                        </VBox.margin>
+                    </TextField>
+                    <Button mnemonicParsing="false" onAction="#addLekarzData" prefHeight="25.0" prefWidth="302.0"
+                            text="Add">
+                        <VBox.margin>
+                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                        </VBox.margin>
+                    </Button>
+                    <Button mnemonicParsing="false" onAction="#deleteLekarzData" prefHeight="25.0"
+                            prefWidth="325.0" text="Delete">
+                        <VBox.margin>
+                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                        </VBox.margin>
+                    </Button>
+                    <Button layoutX="15.0" layoutY="222.0" mnemonicParsing="false" onAction="#loadLekarzeData"
+                            prefHeight="25.0" prefWidth="325.0" text="Load data">
+                        <VBox.margin>
+                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                        </VBox.margin>
+                    </Button>
+                </VBox>
+                <HBox layoutX="262.0" prefHeight="740.0" prefWidth="934.0">
+                    <TableView fx:id="lekarzeTableView" prefHeight="740.0" prefWidth="934.0">
+                        <columns>
+                            <TableColumn fx:id="idLekarzaColumn" prefWidth="100.0" text="Id"/>
+                            <TableColumn fx:id="imieLekarzaColumn" prefWidth="207.0" text="Imie"/>
+                            <TableColumn fx:id="nazwiskoLekarzaColumn" prefWidth="253.0" text="Nazwisko"/>
+                            <TableColumn fx:id="specjalizacjaLekarzaColumn" prefWidth="329.0"
+                                         text="Specjalizacja"/>
+                        </columns>
+                    </TableView>
+                </HBox>
+            </AnchorPane>
+        </Tab>
+        <Tab text="Pacjenci">
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                <VBox prefHeight="740.0" prefWidth="262.0">
+                    <Label alignment="BASELINE_CENTER" contentDisplay="CENTER" prefHeight="32.0"
+                           prefWidth="264.0" text="Dodaj pacjenta">
+                        <font>
+                            <Font name="Calibri" size="22.0"/>
+                        </font>
+                    </Label>
+                    <TextField fx:id="imiePacjentaTextField" promptText="Imie">
+                        <VBox.margin>
+                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                        </VBox.margin>
+                    </TextField>
+                    <TextField fx:id="nazwiskoPacjentaTextField" layoutX="10.0" layoutY="42.0"
+                               promptText="Nazwisko">
+                        <VBox.margin>
+                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                        </VBox.margin>
+                    </TextField>
+                    <Button mnemonicParsing="false" onAction="#addPacjentData" prefHeight="25.0"
+                            prefWidth="302.0" text="Add">
+                        <VBox.margin>
+                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                        </VBox.margin>
+                    </Button>
+                    <Button mnemonicParsing="false" onAction="#deletePacjentData" prefHeight="25.0"
+                            prefWidth="325.0" text="Delete">
+                        <VBox.margin>
+                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                        </VBox.margin>
+                    </Button>
+                    <Button mnemonicParsing="false" onAction="#loadPacjenciData" prefHeight="25.0"
+                            prefWidth="325.0" text="Load data">
+                        <VBox.margin>
+                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                        </VBox.margin>
+                    </Button>
+                </VBox>
+                <HBox layoutX="262.0" prefHeight="740.0" prefWidth="934.0">
+                    <TableView fx:id="pacjenciTableView" prefHeight="740.0" prefWidth="944.0">
+                        <columns>
+                            <TableColumn fx:id="idPacjentaColumn" prefWidth="120.0" resizable="false" text="Id"/>
+                            <TableColumn fx:id="imiePacjentaColumn" prefWidth="364.0" text="Imie"/>
+                            <TableColumn fx:id="nazwiskoPacjentaColumn" prefWidth="450.0" resizable="false"
+                                         text="Nazwisko"/>
+                        </columns>
+                    </TableView>
+                </HBox>
+            </AnchorPane>
+        </Tab>
+        <Tab text="Wizyty">
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                <VBox prefHeight="740.0" prefWidth="262.0">
+                    <Label alignment="BASELINE_CENTER" contentDisplay="CENTER" prefHeight="32.0"
+                           prefWidth="264.0" text="Dodaj wizytę">
+                        <font>
+                            <Font name="Calibri" size="22.0"/>
+                        </font>
+                    </Label>
+                    <TextField fx:id="idPacjentaWizytaTextField" promptText="Id Pacjenta">
+                        <VBox.margin>
+                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                        </VBox.margin>
+                    </TextField>
+                    <TextField fx:id="idLekarzaWizytaTextField" layoutX="10.0" layoutY="42.0"
+                               promptText="Id Lekarza">
+                        <VBox.margin>
+                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                        </VBox.margin>
+                    </TextField>
+                    <TextField fx:id="pokojWizytaTextField" layoutX="10.0" layoutY="42.0" promptText="Pokój">
+                        <VBox.margin>
+                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                        </VBox.margin>
+                    </TextField>
+                    <TextField fx:id="czyZakonczoneWizytaTextField" layoutX="10.0" layoutY="42.0"
+                               promptText="Czy zakończone">
+                        <VBox.margin>
+                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                        </VBox.margin>
+                    </TextField>
+                    <TextField fx:id="czasWizytaTextField" layoutX="15.0" layoutY="152.0" promptText="Czas">
+                        <VBox.margin>
+                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                        </VBox.margin>
+                    </TextField>
+                    <Button mnemonicParsing="false" onAction="#addWizytaData" prefHeight="25.0" prefWidth="302.0"
+                            text="Add">
+                        <VBox.margin>
+                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                        </VBox.margin>
+                    </Button>
+                    <Button mnemonicParsing="false" onAction="#deleteWizytaData" prefHeight="25.0"
+                            prefWidth="325.0" text="Delete">
+                        <VBox.margin>
+                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                        </VBox.margin>
+                    </Button>
+                    <Button mnemonicParsing="false" onAction="#loadWizytaData" prefHeight="25.0"
+                            prefWidth="325.0" text="Load data">
+                        <VBox.margin>
+                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                        </VBox.margin>
+                    </Button>
+                </VBox>
+                <HBox layoutX="262.0" prefHeight="740.0" prefWidth="934.0">
+                    <TableView fx:id="wizytyTableView" prefHeight="740.0" prefWidth="934.0">
+                        <columns>
+                            <TableColumn fx:id="idWizytaColumn" prefWidth="160.0" text="Id Wizyty"/>
+                            <TableColumn fx:id="idPacjentaWizytaColumn" prefWidth="160.0" text="Id Pacjenta"/>
+                            <TableColumn fx:id="idLekarzaWizytaColumn" prefWidth="160.0" text="Id Lekarza"/>
+                            <TableColumn fx:id="pokojWizytaColumn" prefWidth="160.0" text="Pokoj"/>
+                            <TableColumn fx:id="czyZakonczoneWizytaColumn" prefWidth="133.0"
+                                         text="Czy zakończone"/>
+                            <TableColumn fx:id="czasWizytaColumn" prefWidth="160.0" text="Czas"/>
+                        </columns>
+                    </TableView>
+                </HBox>
+            </AnchorPane>
+        </Tab>
+    </TabPane>
+</AnchorPane>
